@@ -1,5 +1,5 @@
 import sql from "../config/db";
-import UserError from "./UserError";
+import UserError from "../errors/UserError";
 
 const TABLE = "app_user";
 

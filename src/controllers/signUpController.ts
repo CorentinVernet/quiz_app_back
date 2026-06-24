@@ -1,4 +1,4 @@
-import UserError from "../repositories/UserError";
+import UserError from "../errors/UserError";
 import signUp from "../services/signUpService";
 import { Request, Response } from "express";
 

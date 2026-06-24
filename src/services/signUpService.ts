@@ -1,4 +1,4 @@
-import UserError from "../repositories/UserError";
+import UserError from "../errors/UserError";
 import { createUser } from "../repositories/userRepository";
 import bcrypt from "bcrypt";
 

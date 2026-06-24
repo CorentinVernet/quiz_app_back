@@ -6,17 +6,18 @@ const signUpController = async (req: Request, res: Response) => {
   const { username, password } = req.body;
   try {
     await signUp(username, password);
+    res.status(201).send();
   } catch (error) {
     if (error instanceof UserError) {
       switch (error.errorType) {
         case "MISSING_CREDENTIALS":
-          res.status(401);
+          res.status(401).send();
           break;
         case "USER_ALREADY_EXISTS":
-          res.status(409);
+          res.status(409).send();
           break;
         default:
-          res.status(500);
+          res.status(500).send();
       }
     }
   }

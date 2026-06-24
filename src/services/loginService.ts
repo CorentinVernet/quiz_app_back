@@ -25,7 +25,6 @@ const login = async (username: string, password: string): Promise<string> => {
       expiresIn: "10h",
     },
   );
-
   return token;
 };
 

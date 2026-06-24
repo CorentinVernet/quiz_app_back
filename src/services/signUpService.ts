@@ -8,7 +8,6 @@ const signUp = async (username: string, password: string): Promise<void> => {
   }
   const encryptedPassword = bcrypt.hashSync(password, 10);
   await createUser(username, encryptedPassword);
-  return;
 };
 
 export default signUp;

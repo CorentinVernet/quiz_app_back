@@ -1,6 +1,6 @@
-import UserError from "../errors/UserError";
-import { createUser } from "../repositories/userRepository";
 import bcrypt from "bcrypt";
+import UserError from "../errors/UserError.ts";
+import { createUser } from "../repositories/userRepository.ts";
 
 const signUp = async (username: string, password: string): Promise<void> => {
   if (!username || !password) {

@@ -1,6 +1,6 @@
-import login from "../services/loginService";
-import UserError from "../errors/UserError";
 import { Request, Response } from "express";
+import UserError from "../errors/UserError.ts";
+import login from "../services/loginService.ts";
 
 const loginController = async (req: Request, res: Response) => {
   const { username, password } = req.body;

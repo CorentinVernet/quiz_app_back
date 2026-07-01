@@ -1,7 +1,7 @@
-import { readUser } from "../repositories/userRepository";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import UserError from "../errors/UserError";
+import UserError from "../errors/UserError.ts";
+import { readUser } from "../repositories/userRepository.ts";
 
 const login = async (username: string, password: string): Promise<string> => {
   if (!username || !password) {

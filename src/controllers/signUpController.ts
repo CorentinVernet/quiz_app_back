@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import UserError from "../errors/UserError.ts";
 import signUp from "../services/signUpService.ts";
 
-const signUpController = async (req: Request, res: Response) => {
+export const signUpController = async (req: Request, res: Response) => {
   const { username, password } = req.body;
   try {
     await signUp(username, password);
@@ -22,5 +22,3 @@ const signUpController = async (req: Request, res: Response) => {
     }
   }
 };
-
-export default signUpController;

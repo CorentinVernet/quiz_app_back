@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import UserError from "../errors/UserError.ts";
 import login from "../services/loginService.ts";
 
-const loginController = async (req: Request, res: Response) => {
+export const loginController = async (req: Request, res: Response) => {
   const { username, password } = req.body;
 
   try {
@@ -28,5 +28,3 @@ const loginController = async (req: Request, res: Response) => {
     }
   }
 };
-
-export default loginController;

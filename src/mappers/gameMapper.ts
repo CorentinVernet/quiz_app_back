@@ -3,10 +3,7 @@ import { userEntityToUserDTO } from "./userMapper.ts";
 
 export const gameEntityToGameDTO = (
   gameEntity: Record<string, any>,
-): GameDTO | null => {
-  if (gameEntity == null) {
-    return null;
-  }
+): GameDTO => {
   return {
     id: gameEntity.id,
     round_index: gameEntity.round_index,

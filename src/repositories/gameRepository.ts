@@ -16,6 +16,15 @@ export const readGame = async (gameId: number): Promise<GameDTO | null> => {
   return gameEntityToGameDTO(game[0]);
 };
 
+export const readGamesByUser = async (
+  userId: string,
+): Promise<GameDTO[] | null> => {
+  const games = await sql`SELECT *
+    FROM game g
+    WHERE user_id = ${userId};`;
+  return games.filter((game) => game != null).map(gameEntityToGameDTO);
+};
+
 export const createGame = async (gameDTO: GameDTO): Promise<void> => {
   const gameEntity = gameDTOToGameEntity(gameDTO);
   await sql`INSERT INTO game
